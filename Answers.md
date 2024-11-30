@@ -11,7 +11,7 @@
    Actually I think it was the race against time and dealing with data to save and display the way the store owner wanted to.
 <br/><br/>
 4. **What mechanism did you put in place to track down issues in production on this code? If you didn’t put anything, write down what you
-   could do** <br/>
+   could do.** <br/>
    I added logs to the methods to track problems.
 <br/><br/>
 5. **The Wiremock represents one source of information. We should be prepared to integrate with more sources. List the steps that we would
