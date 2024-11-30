@@ -8,7 +8,7 @@
 
 ### - The file *grocery-store.postman_collection.json* contais the postman collection.
 
-### - Endpoints
+### - Endpoints:
 
 #### Products
 Used to retrieve product information.
