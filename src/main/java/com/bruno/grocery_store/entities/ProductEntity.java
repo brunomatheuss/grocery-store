@@ -31,6 +31,12 @@ public class ProductEntity {
     @Column(name = "DISCOUNT")
     private Long discount;
 
+    @Column(name = "APPLIED_PROMOTION")
+    private String appliedPromotion;
+
+    @Column(name = "UNIT_PRICE")
+    private Long unitPrice;
+
     @Column(name = "OLD_PRICE")
     private Long oldPrice;
 

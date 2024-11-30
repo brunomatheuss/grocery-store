@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("products")
+@RequestMapping("v1/products")
 public class ProductController {
 
     private final ProductService productService;

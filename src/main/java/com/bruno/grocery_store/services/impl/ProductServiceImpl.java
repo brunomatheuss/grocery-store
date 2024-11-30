@@ -2,8 +2,10 @@ package com.bruno.grocery_store.services.impl;
 
 import com.bruno.grocery_store.clients.WiremockClient;
 import com.bruno.grocery_store.dtos.ProductDTO;
+import com.bruno.grocery_store.exceptions.GenericErrorException;
 import com.bruno.grocery_store.services.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
         try {
             return wiremockClient.getProductById(productId);
         } catch (Exception e) {
-            throw new RuntimeException("Product not found!");
+            throw new GenericErrorException(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

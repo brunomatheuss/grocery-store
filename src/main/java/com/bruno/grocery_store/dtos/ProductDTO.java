@@ -19,9 +19,13 @@ public class ProductDTO {
 
     private Long price;
 
+    private Long unitPrice;
+
     private Long oldPrice;
 
     private Long discount;
+
+    private String appliedPromotion;
 
     private List<PromotionDTO> promotions;
 
