@@ -15,7 +15,7 @@ Used to retrieve product information.
 
 * **[GET] v1/products**: retrieve all products available on wiremock; <br/><br/>
 * **[GET] v1/products/{productID}**: retrieve information about the product for which the id was entered; <br/>
-*Path example*: /v1/products/PWWe3w1dddSDU
+*Path example*: /v1/products/Dwt5F7KAhi
 
 #### Cart
 Used to manipulate cart information.
