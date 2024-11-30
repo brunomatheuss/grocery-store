@@ -26,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
         try {
             return wiremockClient.getProductById(productId);
         } catch (Exception e) {
+            //wiremock error
             throw new GenericErrorException(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

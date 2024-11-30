@@ -78,13 +78,17 @@ public class CartServiceImpl implements CartService {
     public CloseCartResponseDTO closeCart(CloseCartRequestDTO request) {
         CartEntity cart = getCartEntity(request.getCartId());
         if (cart.getStatus().equals(CLOSED.name())) {
-            Long totalDiscount = cart.getProducts().stream().mapToLong(ProductEntity::getDiscount).sum();
+            Long totalDiscount = getTotalDiscount(cart);
             return CloseCartResponseDTO.convert(cart, totalDiscount);
         }
         cart.setStatus(CLOSED.name());
         cart = cartRepository.save(cart);
-        Long totalDiscount = cart.getProducts().stream().mapToLong(ProductEntity::getDiscount).sum();
+        Long totalDiscount = getTotalDiscount(cart);
         return CloseCartResponseDTO.convert(cart, totalDiscount);
+    }
+
+    private Long getTotalDiscount(CartEntity cart) {
+        return cart.getProducts().stream().filter(productEntity -> productEntity.getDiscount() != null).mapToLong(ProductEntity::getDiscount).sum();
     }
 
     private void validateAndApplyPromotions(ProductDTO product, Integer quantity) {

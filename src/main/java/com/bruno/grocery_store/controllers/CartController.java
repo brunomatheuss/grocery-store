@@ -42,11 +42,11 @@ public class CartController {
     @PostMapping("addProduct")
     public ResponseEntity<ProductResponseDTO> addProduct(@RequestBody @Valid AddProductRequestDTO request) {
         ProductResponseDTO response = cartService.addProduct(request);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PostMapping("closeCart")
-    public ResponseEntity<CloseCartResponseDTO> closeCart(@RequestBody CloseCartRequestDTO request) {
+    public ResponseEntity<CloseCartResponseDTO> closeCart(@RequestBody @Valid CloseCartRequestDTO request) {
         CloseCartResponseDTO response = cartService.closeCart(request);
         return ResponseEntity.ok(response);
     }
