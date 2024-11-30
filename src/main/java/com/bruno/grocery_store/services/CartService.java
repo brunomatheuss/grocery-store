@@ -1,16 +1,23 @@
 package com.bruno.grocery_store.services;
 
-import com.bruno.grocery_store.entities.CartEntity;
-import com.bruno.grocery_store.entities.ProductEntity;
+import com.bruno.grocery_store.dtos.request.AddProductRequestDTO;
+import com.bruno.grocery_store.dtos.request.CloseCartRequestDTO;
+import com.bruno.grocery_store.dtos.response.CartResponseDTO;
+import com.bruno.grocery_store.dtos.response.CloseCartResponseDTO;
+import com.bruno.grocery_store.dtos.response.ProductResponseDTO;
 
 import java.util.List;
 
 public interface CartService {
 
-    List<CartEntity> getAllCarts();
+    List<CartResponseDTO> getAllCarts();
 
-    CartEntity openCart();
+    CartResponseDTO getCartById(Long cartId);
 
-    ProductEntity addProductToCart(Long cartId, String productId, Integer quantity);
+    CartResponseDTO openCart();
+
+    ProductResponseDTO addProduct(AddProductRequestDTO request);
+
+    CloseCartResponseDTO closeCart(CloseCartRequestDTO request);
 
 }

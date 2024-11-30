@@ -27,6 +27,6 @@ public class CartEntity {
     private Long totalValue;
 
     @OneToMany(mappedBy = "cartId", cascade = CascadeType.ALL)
-    private List<ProductEntity> produtos;
+    private List<ProductEntity> products;
 
 }

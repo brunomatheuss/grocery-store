@@ -21,7 +21,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO getProductById(String productId) {
-        return wiremockClient.getProductById(productId);
+        try {
+            return wiremockClient.getProductById(productId);
+        } catch (Exception e) {
+            throw new RuntimeException("Product not found!");
+        }
     }
 
 }

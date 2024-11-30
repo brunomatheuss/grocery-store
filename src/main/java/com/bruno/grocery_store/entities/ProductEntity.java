@@ -31,6 +31,9 @@ public class ProductEntity {
     @Column(name = "DISCOUNT")
     private Long discount;
 
+    @Column(name = "OLD_PRICE")
+    private Long oldPrice;
+
     @Column(name = "CART_ID")
     private Long cartId;
 
