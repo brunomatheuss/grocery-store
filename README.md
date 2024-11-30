@@ -8,6 +8,8 @@
 
 ### - The file *grocery-store.postman_collection.json* contains the postman collection.
 
+### - The answers are at the file *Answers.md*
+
 ### - Endpoints:
 
 #### Products
