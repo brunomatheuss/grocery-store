@@ -6,7 +6,7 @@
 
 ### - The sent wiremock must be running
 
-### - The file *grocery-store.postman_collection.json* contais the postman collection.
+### - The file *grocery-store.postman_collection.json* contains the postman collection.
 
 ### - Endpoints:
 
