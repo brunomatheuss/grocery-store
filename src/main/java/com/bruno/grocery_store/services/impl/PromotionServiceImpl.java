@@ -26,11 +26,12 @@ public class PromotionServiceImpl implements PromotionService {
     @Override
     public void calculateFlatPercentPromotion(PromotionDTO promotion, ProductDTO product, Integer quantity) {
         Long unitPrice = product.getPrice();
-        Long oldPrice = product.getPrice() * quantity;
-        Double discount = (oldPrice * 0.1);
-        Long newPrice = oldPrice - discount.longValue();
+        Double oldPrice = (product.getPrice().doubleValue()/100) * quantity;
+        Double discount = (oldPrice * 0.1) * 100;
+        oldPrice = oldPrice * 100;
+        Long newPrice = oldPrice.longValue() - discount.longValue();
         product.setDiscount(discount.longValue());
-        product.setOldPrice(oldPrice);
+        product.setOldPrice(oldPrice.longValue());
         product.setPrice(newPrice);
         product.setUnitPrice(unitPrice);
         product.setAppliedPromotion(promotion.getType());
